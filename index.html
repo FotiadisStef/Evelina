@@ -158,22 +158,44 @@
         /* Dust */
 
         .dust {
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            z-index: 2;
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2;
 
-            background-image:
-                radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px);
-            background-size: 120px 120px;
+    background-image:
+        radial-gradient(rgba(255,255,255,0.18) 1px, transparent 1px),
+        radial-gradient(rgba(255,220,150,0.12) 1px, transparent 1px),
+        radial-gradient(rgba(255,255,255,0.08) 2px, transparent 2px);
 
-            animation: dustMove 60s linear infinite;
-            opacity: 0.4;
-        }
+    background-size:
+        140px 140px,
+        200px 200px,
+        260px 260px;
 
-@keyframes dustMove {
-    from { background-position: 0 0; }
-    to   { background-position: 200px 300px; }
+    background-position:
+        0 0,
+        50px 80px,
+        130px 40px;
+
+    animation: dustFloat 90s linear infinite;
+
+    opacity: 0.5;
+}
+
+@keyframes dustFloat {
+    from {
+        background-position:
+            0 0,
+            50px 80px,
+            130px 40px;
+    }
+    to {
+        background-position:
+            200px 300px,
+            250px 380px,
+            330px 240px;
+    }
 }
         
         /* wax seal */
