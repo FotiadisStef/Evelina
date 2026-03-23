@@ -154,6 +154,27 @@
         .top-right { top: 0; right: 0; transform: scaleX(-1); }
         .bottom-left { bottom: 0; left: 0; transform: scaleY(-1); }
         .bottom-right { bottom: 0; right: 0; transform: scale(-1); }
+
+        /* Dust */
+
+        .dust {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 2;
+
+            background-image:
+                radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px);
+            background-size: 120px 120px;
+
+            animation: dustMove 60s linear infinite;
+            opacity: 0.4;
+        }
+
+@keyframes dustMove {
+    from { background-position: 0 0; }
+    to   { background-position: 200px 300px; }
+}
         
         /* wax seal */
 
@@ -383,6 +404,7 @@
 
 <body>
 
+    <div class="dust"></div>
     <div class="corner top-left"></div>
     <div class="corner top-right"></div>
     <div class="corner bottom-left"></div>
