@@ -22,6 +22,24 @@
             font-family: 'Playfair Display', serif;
         }
 
+        /* Vingette */
+
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+
+            background: radial-gradient(
+                circle at 50% 50%,
+                rgba(0,0,0,0) 45%,
+                rgba(0,0,0,0.3) 75%,
+                rgba(0,0,0,0.65) 100%
+            );
+
+            pointer-events: none;
+            z-index: 1;
+        }
+
         /* envelope */
 
         .envelope {
@@ -57,8 +75,9 @@
 
             opacity: 0;
 
-            animation: flicker 6s infinite alternate;
-
+            animation: 
+                flicker 6s infinite alternate,
+                floatGlow 8s ease-in-out infinite;
             transition: opacity 1.5s ease;
 
         }
@@ -81,6 +100,14 @@
 
         }
 
+        /* Candelight floatGlow */
+
+        @keyframes floatGlow {
+            0%   { transform: translate(-50%, -50%) scale(1); }
+            50%  { transform: translate(-50%, -52%) scale(1.03); }
+            100% { transform: translate(-50%, -50%) scale(1); }
+        }
+        
         /* Letter SlideBack */
 
         @keyframes slideBack {
@@ -251,7 +278,8 @@
             border: 1px solid #d6c7a8;
             box-shadow:
                 0 30px 80px rgba(0, 0, 0, 0.5),
-                inset 0 0 40px rgba(120, 90, 50, .25);
+                inset 0 0 40px rgba(120, 90, 50, .25),
+                inset 0 0 10px rgba(0,0,0,0.1);
             border-radius: 3px;
 
             transform: translateY(300px) rotate(-1deg);
@@ -281,6 +309,7 @@
         .poem {
             font-family: 'Great Vibes', cursive;
             font-size: 34px;
+            text-shadow: 0 0 1px rgba(110,27,39,0.2);
             color: #6e1b27;
             line-height: 1.7;
             text-align: center;
