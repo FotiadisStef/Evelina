@@ -155,49 +155,6 @@
         .bottom-left { bottom: 0; left: 0; transform: scaleY(-1); }
         .bottom-right { bottom: 0; right: 0; transform: scale(-1); }
 
-        /* Dust */
-
-        .dust {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 2;
-
-    background-image:
-        radial-gradient(rgba(255,255,255,0.18) 1px, transparent 1px),
-        radial-gradient(rgba(255,220,150,0.12) 1px, transparent 1px),
-        radial-gradient(rgba(255,255,255,0.08) 2px, transparent 2px);
-
-    background-size:
-        140px 140px,
-        200px 200px,
-        260px 260px;
-
-    background-position:
-        0 0,
-        50px 80px,
-        130px 40px;
-
-    animation: dustFloat 90s linear infinite;
-
-    opacity: 0.5;
-}
-
-@keyframes dustFloat {
-    from {
-        background-position:
-            0 0,
-            50px 80px,
-            130px 40px;
-    }
-    to {
-        background-position:
-            200px 300px,
-            250px 380px,
-            330px 240px;
-    }
-}
-        
         /* wax seal */
 
         .seal {
